@@ -8,7 +8,7 @@ sealed class Cell(var isOpen: Boolean, var isFlagged: Boolean = false) {
 
     fun getChar(): Char {
         return when {
-            this.isFlagged -> '*'
+            isFlagged -> '*'
             this is Empty && numberOfMines > 0 && isOpen -> numberOfMines.digitToChar()
             this is Empty && isOpen -> '/'
             this is Bomb && isOpen -> 'X'
